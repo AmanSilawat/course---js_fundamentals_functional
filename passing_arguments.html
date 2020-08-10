@@ -1,0 +1,29 @@
+<script>
+
+var increment = function(n) { return n + 1; };
+var square = function(n) { return n * n; }
+
+var doMathSoIDontHaveTo = function(n, func) { return func(n); }
+
+doMathSoIDontHaveTo(5, square);
+
+doMathSoIDontHaveTo(4, increment);
+
+
+
+// ----- Translate into ES6 Solution -----
+
+const increment = n => { return n + 1; };
+const square = n => { return n * n; };
+const doMathSoIDontHaveTo = (n, func) => { return func(n); };
+
+
+
+///----- how do we pass arguments in function inside of function. -----
+
+const ifElse = (condition, isTrue, isFalse, p) => {
+	return condition ? isTrue(p) : isFalse(p);
+};
+
+ifElse(true, (res) => console.log(res), (res) => console.log(res), "HI");
+</script>

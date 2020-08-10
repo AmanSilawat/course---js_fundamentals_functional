@@ -1,0 +1,44 @@
+<script>
+
+    var constructArr = function() {
+        const arr = Array.prototype.slice.call(arguments);
+        arr.push('the billiards room?');
+        return arr.join(" ");    
+    };
+    constructArr('was', 'it', 'in');
+    
+    
+    
+    // ----- Array.from(arguments) ----- Same upside code
+    
+    var constructArr = function() {
+        const arr = Array.from(arguments);
+        arr.push('the billiards room?');
+        return arr.join(" ");    
+    };
+    constructArr('was', 'it', 'in'); 
+    
+    
+    
+    // ----- Array using arrow function -----
+    
+    const from = arr => {
+        return Array.prototype.slice.call(arr);
+    }
+    
+    
+    
+
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>

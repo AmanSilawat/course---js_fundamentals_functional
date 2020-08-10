@@ -1,0 +1,77 @@
+<script>
+let _ = {};
+
+_.each = function(list, callback) {
+
+	if (Array.isArray(list)) {
+		for (var i = 0; i < list.length; i++) {
+			callback(list[i], i, list);
+		}
+	} else {
+		for (var key in list) {
+			callback(list[key], key, list);
+		}
+	}
+}
+
+//- - - - - - - - - - 
+_.map = function(list, callback) {
+
+	var storage = [];
+
+	//-----firt way creating a loop -----
+	// for (var i = 0; i < list.length; i++) {
+	// 	storage.push(callback(list[i], i, list))
+	// }
+
+	//second way
+	_.each(list, function(v, i, list) {
+		storage.push(callback(v, i, list))
+	});
+
+	return storage;
+}
+_.map([1, 2, 3], function(val) { return val + 1;});
+
+//HOW TO RUN
+
+// copy and past in console.log
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

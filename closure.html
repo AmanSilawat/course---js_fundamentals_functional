@@ -1,0 +1,120 @@
+<!-- <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script> -->
+
+<script>
+
+// ----- closure -----
+const myAlert = () => {
+	const x = `Help! I think i found a clue!`;
+	const alerter = () => {
+		alert(x);
+	}
+	alerter();
+};
+//myAlert();
+
+
+// ----- closure 2 -----
+const myAlert2 = () => {
+	const x = `Help! I think i found a clue!`;
+	const alerter2 = () => {
+		alert(x);
+	}
+	setTimeout(alerter2(), 1000);
+	console.log('what happens first? this log or the alert?');
+};
+//myAlert2();
+
+
+// ----- closure 3 -----
+const func = () => {
+	let x = `Help! I found a clue!`;
+	let count = 0;
+	const alerter = () => {
+		alert(`${x} ${++count}`);
+	}
+	return alerter;
+}
+
+alerter01 = func();
+alerter02 = func();
+
+// alerter01();
+// alerter01();
+// alerter02();
+
+
+// ----- closure 4 -----
+const newClue = (name) => {
+	const length = name.length;
+
+	return (weapen) => {
+		let clue = length + weapen.length;
+		return !!(clue % 1);
+	}
+}
+
+let clue = newClue("Green");
+clue("lead pipe");
+
+
+
+// ----- closure 5  (TYPE 01) -----
+function countHint() {
+	var n = 0;
+	return {
+		count: function() { return ++n },
+		reset: function() { return n = 0 }
+	}
+}
+
+let counter = countHint();
+counter.count();
+counter.count();
+
+
+// ----- closure 5  (TYPE 02 ES6) -----
+let countHint2 = () => {
+	var n = 0;
+	return {
+		count: () => ++n,
+		reset: () => n = 0
+	}
+}
+
+let counter2 = countHint2();
+counter2.count();
+counter2.count();
+
+
+// ----- closure 6 -----
+const findSomeone = () => {
+	const speak = () => {
+		console.log(who);
+	};
+
+	let who = `Why hello there, Prof Plum!`;
+	return speak;
+};
+const someoneSpeak = findSomeone();
+someoneSpeak();
+
+
+// ----- closure 7 -----
+const makeTimer = () => {
+	let elapsed = 0;
+
+	const stopwatch = () => { return elapsed; }
+
+	const increase = () => elapsed++;
+
+	setInterval(increase, 1000);
+
+	return stopwatch;
+};
+
+// let timer = makeTimer();
+// timer();
+
+
+
+</script>

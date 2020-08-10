@@ -1,0 +1,73 @@
+<script>
+let _ = {};
+
+_.each = function(list, callback) {
+
+	if (Array.isArray(list)) {
+		for (var i = 0; i < list.length; i++) {
+			callback(list[i], i, list);
+		}
+	} else {
+		for (var key in list) {
+			callback(list[key], key, list);
+		}
+	}
+}
+
+//- - - - - - - - - - 
+_.filter = function(list, callback) {
+
+	var storage = [];
+
+	_.each(list, function(v, i, list) {
+		if (callback(v, i, list)) {
+			storage.push(v)
+		} 
+	});
+
+	return storage;
+}
+_.filter([1, 3, 2, 3], function(val) { return val == 3;});
+
+//HOW TO RUN
+
+// copy and past in console.log
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

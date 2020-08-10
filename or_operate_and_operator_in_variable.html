@@ -1,0 +1,22 @@
+<script>
+
+const add = function(a, b) {
+  b = b || 2;   //B when it does not exist then it will work and assign 2
+  b = b && 3;   //B when it does exist then it will work and assign 3
+
+  b = b || 2 // 2
+  b = 0 || 2 // 2  my way this is bug!
+  b = 5 || 2 // 5
+  b = 10 || 2 // 10
+
+  return a+b;
+}
+add(3);
+
+
+
+
+
+
+
+</script>

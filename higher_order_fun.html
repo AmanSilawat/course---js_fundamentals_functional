@@ -1,0 +1,13 @@
+<script>
+
+const myFun = (condition, isTrue, isFalse) => {
+	condition ? isTrue() : isFalse();
+}
+
+myFun(false,
+	() => console.log(true),
+	() => console.log(false)
+);
+
+
+</script>
